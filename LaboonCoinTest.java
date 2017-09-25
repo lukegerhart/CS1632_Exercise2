@@ -60,4 +60,24 @@ public class LaboonCoinTest {
 	    
     // TODO - PUT YOUR SIX TESTS HERE
     
+	// Test the happy path
+	@Test
+	public void testHashValid() {
+		int hash = _l.hash("boo");
+		assertEquals(1428150834, hash);
+	}
+	
+	// Test the empty string
+	@Test
+	public void testHashEmptyString() {
+		int hash = _l.hash("");
+		assertEquals(10000000, hash);
+	}
+	
+	// Test nulls
+	@Test
+	public void testHashNull() {
+		int hash = _l.hash(null);
+		assertEquals(10000000, hash);
+	}
 }
