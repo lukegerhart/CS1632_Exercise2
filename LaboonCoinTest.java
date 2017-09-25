@@ -59,5 +59,26 @@ public class LaboonCoinTest {
     }
 	    
     // TODO - PUT YOUR SIX TESTS HERE
-    
+	
+    @Test
+	public void testValidHashNoZeros(){
+		int dif=0;
+		int hash=12345678;
+		boolean hold= testValidHash(dif, hash);
+		assertEquals(true, hold);
+	}
+	@Test
+	public void testValidHashInValid(){
+		int dif=4;
+		int hash=12345678;
+		boolean hold= testValidHash(dif, hash);
+		assertEquals(false, hold);
+	}
+	@Test
+	public void testValidHashProperLong(){
+		int dif=4;
+		int hash=00005678;
+		boolean hold= testValidHash(dif, hash);
+		assertEquals(true, hold);
+	}	
 }
