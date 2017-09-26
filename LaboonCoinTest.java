@@ -85,7 +85,7 @@ public class LaboonCoinTest {
 	public void testValidHashNoZeros(){
 		int dif=0;
 		int hash=12345678;
-		boolean hold= testValidHash(dif, hash);
+		boolean hold= _l.validHash(dif, hash);
 		assertEquals(true, hold);
 	}
   
@@ -93,15 +93,15 @@ public class LaboonCoinTest {
 	public void testValidHashInValid(){
 		int dif=4;
 		int hash=12345678;
-		boolean hold= testValidHash(dif, hash);
+		boolean hold= _l.validHash(dif, hash);
 		assertEquals(false, hold);
 	}
   
 	@Test
 	public void testValidHashProperLong(){
 		int dif=4;
-		int hash=00005678;
-		boolean hold= testValidHash(dif, hash);
+		int hash=5678;
+		boolean hold= _l.validHash(dif, hash);
 		assertEquals(true, hold);
 	}	
 }
