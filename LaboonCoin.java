@@ -81,6 +81,9 @@ public class LaboonCoin {
     
     public int hash(String data) {
 	// TODO - IMPLEMENT LABOONHASH
+		if (null == data) {
+			return 10000000;
+		}
 		int n = 10000000;
 		for (int i = 0; i < data.length(); i++) {
 			char c = data.charAt(i);
@@ -106,7 +109,7 @@ public class LaboonCoin {
     
     public boolean validHash(int difficulty, int hash) {
 		String hex= Integer.toHexString(hash);
-		zeroCount=0;
+		int zeroCount=0;
 		for(int i=0; i<difficulty; i++){
 			if (hex.charAt(i)=='0'){
 				zeroCount++;
@@ -119,7 +122,7 @@ public class LaboonCoin {
 			return false;
 		}
 	// TODO - CHECK FOR VALID HASHES
-	return false;
+	//return false;
     }
 
     /**
