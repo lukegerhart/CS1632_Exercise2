@@ -81,7 +81,7 @@ public class LaboonCoinTest {
 		assertEquals(10000000, hash);
 	}
 	
-  @Test
+    @Test
 	public void testValidHashNoZeros(){
 		int dif=0;
 		int hash=12345678;
